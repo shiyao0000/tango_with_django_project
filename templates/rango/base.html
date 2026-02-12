@@ -1,0 +1,33 @@
+ {% loadstaticfiles%}
+
+<html> 
+    <head>
+         <title>
+            Rango - 
+            {% block title_block %}
+                HowtoTangowith Django!
+            {% endblock title_block %} 
+         </title>
+    </head>
+    <body>
+        <div>
+        {% block body_block %} 
+        {% endblock body_block %}
+        </div>
+        
+        <hr />
+        <div>
+            {% block sidebar_block %}
+                {%get_category_list category%}
+            {% endblock %}
+        </div>
+        <div>
+            <ul>
+                <li><ahref="{%url 'rango:add_category'%}">AddaNewCategory</a></li>
+
+                <li><ahref="{%url 'rango:about'%}">About</a></li>
+                <li><ahref="{%url 'rango:index'%}">Index</a></li>
+            </ul>
+        </div>
+    </body> 
+</html>
